@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 
 import com.example.bookstore.domain.Book;
 import com.example.bookstore.domain.BookRepository;
+import com.example.bookstore.domain.Category;
+import com.example.bookstore.domain.CategoryRepository;
 
 @SpringBootApplication
 public class BookstoreApplication {
@@ -15,18 +17,28 @@ public class BookstoreApplication {
 		SpringApplication.run(BookstoreApplication.class, args);
 	}
 	
+	
 	@Bean
-	public CommandLineRunner demo (BookRepository repository){
+	public CommandLineRunner demo (CategoryRepository repository){
 		
 		return(args) -> {
-			Book b1 = new Book("Jussi tarina","jussi", "1997", "951-98548-9-4", "9.50" ) ;
-			Book b2 = new Book("Rene tarina","Rene", "2001", "951-98728-10-4", "12.50" ) ;
-			Book b3 = new Book("Lotr","Tolkien", "1967", "951-98548-9-4", "19.99" ) ;
+			
+			Category c1 = new Category("Fantasy") ;
+			Category c2 = new Category("Thriller") ;
+			Category c3 = new Category("Scifi") ;
+			Category c4 = new Category("Biography") ;
+			repository.save(c1) ;
+			repository.save(c2) ;
+			repository.save(c3) ;
+			repository.save(c4) ;
+			//Book b1 = new Book("Jussi tarina","jussi", "1997", "951-98548-9-4", "9.50" ) ;
+			//Book b2 = new Book("Rene tarina","Rene", "2001", "951-98728-10-4", "12.50" ) ;
+			//Book b3 = new Book("Lotr","Tolkien", "1967", "951-98548-9-4", "19.99" ) ;
 			
 			
-			repository.save(b1) ;
-			repository.save(b2) ;
-			repository.save(b3) ;
+			//repository.save(b1) ;
+			//repository.save(b2) ;
+			//repository.save(b3) ;
 	};
 		
 	}
