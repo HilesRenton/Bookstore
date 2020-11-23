@@ -31,6 +31,7 @@ public class BookstoreApplication {
 			repository.save(c2) ;
 			repository.save(c3) ;
 			repository.save(c4) ;
+			
 			//Book b1 = new Book("Jussi tarina","jussi", "1997", "951-98548-9-4", "9.50" ) ;
 			//Book b2 = new Book("Rene tarina","Rene", "2001", "951-98728-10-4", "12.50" ) ;
 			//Book b3 = new Book("Lotr","Tolkien", "1967", "951-98548-9-4", "19.99" ) ;
