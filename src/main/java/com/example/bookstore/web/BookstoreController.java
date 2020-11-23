@@ -62,8 +62,8 @@ public class BookstoreController {
 			return"redirect:booklist";
 			}
 		
+		@PreAuthorize("hasAuthority('ADMIN')")
 		@RequestMapping(value ="/delete/{id}",method =RequestMethod.GET)
-		@PreAuthorize("hasRole('ADMIN')")
 		public String deleteBook (@PathVariable("id") Long id, Model model) {
 			repository.deleteById(id);
 			return"redirect:../booklist" ;
