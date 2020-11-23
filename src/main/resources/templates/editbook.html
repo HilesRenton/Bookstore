@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Server Programming with Spring Boot</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+    <header>Edit Book</header>
+        <div>
+           <form th:object="${book}" th:action="@{../save}" action="#" method="post">	
+          	<input type= "hidden" th:field="*{id}" class="form-control"/>
+           	<input type= "text" id = "title" th:field="*{title}"/>
+           	<input type= "text" id = "author" th:field="*{author}"/>          
+           	<input type= "text" id = "year" th:field="*{year}"/>           	
+           	<input type= "text" id = "isbn" th:field="*{isbn}"/>
+           	<input type= "text" id = "price" th:field="*{price}"/>
+           	
+          	<input type="submit" class="btn btn-success" value="Save"></input>
+           </form>
+        </div>
+    </body>
+</html>
